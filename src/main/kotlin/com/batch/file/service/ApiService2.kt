@@ -7,7 +7,7 @@ class ApiService2: ApiService() {
 
     private val logger = KotlinLogging.logger {}
 
-    override fun call(items: MutableList<out com.batch.file.core.domain.product.ApiRequest>) {
+    override fun call(items: MutableList<out ApiRequest>) {
         logger.info { "call ApiService2: ${items}" }
     }
 

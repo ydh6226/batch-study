@@ -1,9 +1,7 @@
 package com.batch.file.core.classifier
 
-import com.batch.file.core.domain.product.ApiRequest
 import com.batch.file.core.domain.product.Product
 import mu.KotlinLogging
-import org.springframework.batch.item.ItemProcessor
 import org.springframework.classify.Classifier
 
 class ProcessorClassifier<C, T>(
@@ -15,7 +13,7 @@ class ProcessorClassifier<C, T>(
     override fun classify(product: C): T {
         logger.info { "ProcessorClassifier: ${product}" }
 
-        val type = (product as com.batch.file.core.domain.product.Product).type
+        val type = (product as Product).type
         return processorMap[type]!!
     }
 }

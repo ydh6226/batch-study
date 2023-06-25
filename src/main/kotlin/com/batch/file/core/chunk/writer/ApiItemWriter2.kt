@@ -1,17 +1,17 @@
 package com.batch.file.core.chunk.writer
 
 import com.batch.file.core.domain.product.ApiRequest
-import com.batch.service.ApiService
+import com.batch.file.service.ApiService
 import mu.KotlinLogging
 import org.springframework.batch.item.ItemWriter
 
 class ApiItemWriter2(
     private val apiService: ApiService,
-): ItemWriter<com.batch.file.core.domain.product.ApiRequest> {
+): ItemWriter<ApiRequest> {
 
     private val logger = KotlinLogging.logger {}
 
-    override fun write(items: MutableList<out com.batch.file.core.domain.product.ApiRequest>) {
+    override fun write(items: MutableList<out ApiRequest>) {
         logger.info { "ApiItemWriter2 write method call" }
 
         apiService.call(items)

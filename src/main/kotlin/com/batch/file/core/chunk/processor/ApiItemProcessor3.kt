@@ -4,10 +4,10 @@ import com.batch.file.core.domain.product.ApiRequest
 import com.batch.file.core.domain.product.Product
 import org.springframework.batch.item.ItemProcessor
 
-class ApiItemProcessor3: ItemProcessor<com.batch.file.core.domain.product.Product, com.batch.file.core.domain.product.ApiRequest> {
-    override fun process(item: com.batch.file.core.domain.product.Product): com.batch.file.core.domain.product.ApiRequest? {
-        return com.batch.file.core.domain.product.ApiRequest(
-            id = item.id!!,
+class ApiItemProcessor3: ItemProcessor<Product, ApiRequest> {
+    override fun process(item: Product): ApiRequest {
+        return ApiRequest(
+            id = item.id,
             productDto = item
         )
     }

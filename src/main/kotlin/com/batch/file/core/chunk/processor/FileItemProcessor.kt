@@ -5,13 +5,13 @@ import com.batch.file.core.domain.product.ProductDto
 import mu.KotlinLogging
 import org.springframework.batch.item.ItemProcessor
 
-class FileItemProcessor: ItemProcessor<com.batch.file.core.domain.product.ProductDto, com.batch.file.core.domain.product.Product> {
+class FileItemProcessor: ItemProcessor<ProductDto, Product> {
 
     private val logger = KotlinLogging.logger {}
 
-    override fun process(dto: com.batch.file.core.domain.product.ProductDto): com.batch.file.core.domain.product.Product {
+    override fun process(dto: ProductDto): Product {
         logger.info { "${dto} 변환" }
 
-        return com.batch.file.core.domain.product.Product(dto.name!!, dto.price!!, dto.type!!)
+        return Product(dto.name!!, dto.price!!, dto.type!!)
     }
 }

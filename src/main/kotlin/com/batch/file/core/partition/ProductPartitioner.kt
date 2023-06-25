@@ -1,7 +1,6 @@
 package com.batch.file.core.partition
 
-import com.batch.file.core.domain.product.Product
-import com.batch.service.ProductRepository
+import com.batch.file.service.ProductRepository
 import mu.KotlinLogging
 import org.springframework.batch.core.partition.support.Partitioner
 import org.springframework.batch.item.ExecutionContext

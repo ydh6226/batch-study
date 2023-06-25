@@ -13,7 +13,7 @@ class WriterClassifier<C, T>(
     override fun classify(apiRequest: C): T {
         logger.info { "WriterClassifier: ${apiRequest}" }
 
-        val type = (apiRequest as com.batch.file.core.domain.product.ApiRequest).productDto.type
+        val type = (apiRequest as ApiRequest).productDto.type
         return writerMap[type]!!
     }
 }
