@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: foo-batch
+  batch.job.names: ${job.name:NONE}
+  main:
+    web-application-type: none
+  datasource:
+    url: jdbc:mysql://localhost:3310/batch
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
